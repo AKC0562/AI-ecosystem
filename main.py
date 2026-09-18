@@ -4,6 +4,8 @@ from agents.hunter.agent import hunter
 from agents.designer.agent import designer
 from agents.closer.agent import closer
 
+from core.graph import agent_graph
+
 app = FastAPI(
     title="Ai Ecosystem",
     version="1.0.0"
@@ -53,3 +55,11 @@ def run_agent(agent_name: str, task: str):
             "error": "Agent not found"
         }
     return agent.run(task)
+
+@app.post("/test-agent")
+def test_agent(task: str):
+    result = agent_graph.invoke({
+        "task": task,
+        "response": ""
+    })
+    return result

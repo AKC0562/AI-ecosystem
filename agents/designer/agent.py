@@ -2,12 +2,12 @@ from core.agent import Agent
 from core.llm import MockLLMProvider
 
 
-closer = Agent(
-    name="Client Closer",
+designer = Agent(
+    name="Pre-Sales Designer",
     instructions="""
-    Communicate with qualified clients,
-    answer questions, qualify requirements,
-    and schedule meetings for human handoff.
+    Create personalized designs,
+    prototypes, and pre-sales assets
+    for qualified leads.
     """,
     llm=MockLLMProvider(),
 )

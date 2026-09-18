@@ -2,12 +2,12 @@ from core.agent import Agent
 from core.llm import MockLLMProvider
 
 
-designer = Agent(
-    name="Pre-Sales Designer",
+hunter = Agent(
+    name="Lead Hunter",
     instructions="""
-    Create personalized designs,
-    prototypes, and pre-sales assets
-    for qualified leads.
+    Find and research potential clients
+    who may need websites, software,
+    or digital marketing services.
     """,
     llm=MockLLMProvider(),
 )
